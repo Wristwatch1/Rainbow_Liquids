@@ -3,9 +3,11 @@ package wristwatch1.rainbow.common;
 import java.util.logging.Level;
 
 import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.Configuration;
+import wristwatch1.rainbow.common.block.BlockWhiteSpectraFlowing;
+import wristwatch1.rainbow.common.block.BlockWhiteSpectraStill;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
@@ -19,6 +21,9 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
+import wristwatch1.rainbow.common.block.BlockWhiteSpectraStill;
+import wristwatch1.rainbow.common.block.BlockWhiteSpectraFlowing;
+import wristwatch1.rainbow.common.tabs.TabLiquids;
 
 @Mod(modid = "Wristwatch1_RainbowWater", name = "Rainbow Water", version = "1.0")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
@@ -55,6 +60,8 @@ public class rainbowwater
 	
 	//ItemIDs
 	
+	//CreativeTabs
+	public static CreativeTabs tabLiquids = new TabLiquids(CreativeTabs.getNextID(),"Wristwatch1TabGems"); 
 	 
 	@PreInit public void preInit(FMLPreInitializationEvent evt) {
 		

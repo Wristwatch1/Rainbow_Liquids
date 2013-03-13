@@ -1,4 +1,4 @@
-package wristwatch1.rainbow.common;
+package wristwatch1.rainbow.common.block;
 
 import java.util.Random;
 
@@ -19,15 +19,16 @@ import net.minecraftforge.liquids.ILiquid;
 public class BlockWhiteSpectraFlowing extends BlockFlowing
 {
 
-	protected BlockWhiteSpectraFlowing(int id)
+	public BlockWhiteSpectraFlowing(int id)
 	  {
 	   super(id, Material.water);
 	   this.setHardness(100F);		
 	   this.setLightOpacity(3);
+	   this.blockIndexInTexture = 0;
 	  }
 	public String getTextureFile()
   {
-          return "/rainbowwater.png";
+          return "/rainbowater.png";
   }
 }
 		

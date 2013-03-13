@@ -1,5 +1,6 @@
-package wristwatch1.rainbow.common;
+package wristwatch1.rainbow.common.block;
 
+import wristwatch1.rainbow.common.rainbowwater;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockStationary;
 import net.minecraft.block.material.Material;
@@ -16,13 +17,14 @@ import net.minecraftforge.liquids.ILiquid;
 
 public class BlockWhiteSpectraStill extends BlockStationary
 {
-	protected BlockWhiteSpectraStill(int id) {
+	public BlockWhiteSpectraStill(int id) {
 		super(id, Material.water);
-		this.setCreativeTab(CreativeTabs.tabMisc);
+		this.setCreativeTab(rainbowwater.tabLiquids);
 		this.setHardness(100F);
 		this.setLightOpacity(3);
 		this.disableStats();
 		this.setRequiresSelfNotify();
+		this.blockIndexInTexture = 0;
 		}
 		
 	public void onEntityCollidedWithBlock(World world, int i, int j, int k, Entity entity)
@@ -39,6 +41,6 @@ public class BlockWhiteSpectraStill extends BlockStationary
 
        public String getTextureFile()
 	  {
-	          return "/rainbowwater.png";
+	          return "/rainbowater.png";
 	  }
 }
