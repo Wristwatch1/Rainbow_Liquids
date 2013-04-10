@@ -3,6 +3,7 @@ package wristwatch1.rainbow.common;
 import java.util.logging.Level;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.Configuration;
@@ -23,16 +24,19 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import wristwatch1.rainbow.common.block.BlockWhiteSpectraStill;
 import wristwatch1.rainbow.common.block.BlockWhiteSpectraFlowing;
+import wristwatch1.rainbow.common.item.ItemWhiteSpectraBucket;
 import wristwatch1.rainbow.common.tabs.TabLiquids;
 
-@Mod(modid = "Wristwatch1_RainbowWater", name = "Rainbow Water", version = "1.0")
+@Mod( modid = rainbowwater.modid, name = "Rainbow Water", version = "1.0")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 
 public class rainbowwater
 
 {
+	public static final String modid = "Wristwatch1_RainbowWater";
 	
-	@Instance ("Wristwatch1_RainbowWater")public static rainbowwater instance;
+	@Instance ("Wristwatch1_RainbowWater")
+	public static rainbowwater instance;
 	
 	
 	@SidedProxy (clientSide = "wristwatch1.rainbow.common.ClientProxyRainbowWater", serverSide = "wristwatch1.rainbow.common.CommonProxyRainbowWater")
@@ -54,14 +58,14 @@ public class rainbowwater
 	
 	//Items
 	
-	public static Item Spectralizer;
+	//public static Item WhiteSpectraBucket;
 	
 	//Armour
 	
 	//ItemIDs
 	
 	//CreativeTabs
-	public static CreativeTabs tabLiquids = new TabLiquids(CreativeTabs.getNextID(),"Wristwatch1TabGems"); 
+	public static CreativeTabs tabLiquids = new TabLiquids(CreativeTabs.getNextID(),"Wristwatch1TabLiquids"); 
 	 
 	@PreInit public void preInit(FMLPreInitializationEvent evt) {
 		
@@ -71,7 +75,7 @@ public class rainbowwater
 	
 	try {
 		
-		WhiteSpectraID = cfg.getBlock("White Spectra", 703).getInt();
+		WhiteSpectraID = cfg.getBlock("White Spectra", 250).getInt();
 		
 	} catch (Exception e) {
 		
@@ -88,19 +92,19 @@ public class rainbowwater
 	  {
 		//Blocks
 		
-		WhiteSpectraStill = new BlockWhiteSpectraStill(WhiteSpectraID).setBlockName("White Spectra (Still)");
+		WhiteSpectraStill = new BlockWhiteSpectraStill(WhiteSpectraID, Material.water).setUnlocalizedName("blockWhiteSpectraStill");
 		
-		WhiteSpectraFlowing = new BlockWhiteSpectraFlowing(WhiteSpectraID - 1).setBlockName("White Spectra (Flowing)");
+		WhiteSpectraFlowing = new BlockWhiteSpectraFlowing(WhiteSpectraID - 1, Material.water).setUnlocalizedName("blockWhiteSpectraFlowing");
 		
 		//Items
 		
-		Spectralizer = new ItemSpectralizer(5000).setIconIndex(171).setItemName("Spectralizer");
+		//WhiteSpectraBucket = new ItemWhiteSpectraBucket(5000).setUnlocalizedName("Bucket of White Spectra");
 
 		//Game Registry
 		
-		 GameRegistry.registerBlock(WhiteSpectraStill);
+		 GameRegistry.registerBlock(WhiteSpectraStill, modid + WhiteSpectraStill.getUnlocalizedName2());
 		 
-		 GameRegistry.registerBlock(WhiteSpectraFlowing);
+		 GameRegistry.registerBlock(WhiteSpectraFlowing, modid + WhiteSpectraFlowing.getUnlocalizedName2());
 		
 		 //Language Registry
 		 //Blocks
@@ -111,7 +115,7 @@ public class rainbowwater
 		 
 		 //Items
 		 
-		 LanguageRegistry.addName(Spectralizer, "Spectralizer");
+		 //LanguageRegistry.addName(WhiteSpectraBucket, "Bucket of White Spectra");
 		 
 		 //Armour
 		 

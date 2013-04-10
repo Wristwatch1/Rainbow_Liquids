@@ -7,6 +7,6 @@ public class ClientProxyRainbowWater extends CommonProxyRainbowWater
   @Override
      public void registerRenderThings()
      {
-	  MinecraftForgeClient.preloadTexture("/rainbowater.png"); 
+	//  MinecraftForgeClient.preloadTexture("/rainbowater.png"); 
     }
  }
