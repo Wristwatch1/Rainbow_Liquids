@@ -1,0 +1,16 @@
+white = instant health
+orange = strength
+magenta = regen
+light blue = speed
+yellow = invisibility
+lime green = posion
+pink = jump
+gray = wither
+light gray = resist
+cyan = water breath
+purple = haste
+blue = night vision
+brown = hunger
+green = nauesa
+red = fire resist
+black = instant damage
