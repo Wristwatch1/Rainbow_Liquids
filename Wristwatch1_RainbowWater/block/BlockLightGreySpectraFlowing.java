@@ -23,10 +23,10 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.liquids.ILiquid;
 
-public class BlockWhiteSpectraFlowing extends BlockFlowing implements ILiquid
+public class BlockLightGreySpectraFlowing extends BlockFlowing
 {
 
-	public BlockWhiteSpectraFlowing(int id, Material par2Material)
+	public BlockLightGreySpectraFlowing(int id, Material par2Material)
 	  {
 	   super(id, par2Material);
 	   this.setHardness(100F);		
@@ -38,33 +38,9 @@ public class BlockWhiteSpectraFlowing extends BlockFlowing implements ILiquid
 	    @SideOnly(Side.CLIENT)
 	  
 	    public void registerIcons(IconRegister iconRegister){
-	        this.theIcon = new Icon[] {iconRegister.registerIcon("Wristwatch1_RainbowWater:BlockWhiteSpectraStill"), iconRegister.registerIcon("Wristwatch1_RainbowWater:BlockWhiteSpectraFlowing")};
+	        this.theIcon = new Icon[] {iconRegister.registerIcon("Wristwatch1_RainbowWater:BlockLightGreySpectraStill"), iconRegister.registerIcon("Wristwatch1_RainbowWater:BlockLightGreySpectraFlowing")};
 	    }
-
-	@Override
-	public int stillLiquidId() {
-		// TODO Auto-generated method stub
-		return mods.Wristwatch1_RainbowWater.rainbowwater.WhiteSpectraID;
-	}
-
-	@Override
-	public boolean isMetaSensitive() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public int stillLiquidMeta() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 	
-	@Override	
-	public boolean isBlockReplaceable(World world, int i, int j, int k) {	
-	
-		return true;
-	}
+
 }
-
-
 

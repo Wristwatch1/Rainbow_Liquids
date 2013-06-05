@@ -19,9 +19,9 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.liquids.ILiquid;
 
-public class BlockWhiteSpectraStill extends BlockStationary implements ILiquid
+public class BlockLightGreySpectraStill extends BlockStationary
 {
-	public BlockWhiteSpectraStill(int id, Material par2Material) 
+	public BlockLightGreySpectraStill(int id, Material par2Material) 
 	{
 		super(id, par2Material);
 		this.setHardness(100F);		
@@ -35,7 +35,7 @@ public class BlockWhiteSpectraStill extends BlockStationary implements ILiquid
 	    @SideOnly(Side.CLIENT)
 	  
 	    public void registerIcons(IconRegister iconRegister){
-	        this.theIcon = new Icon[] {iconRegister.registerIcon("Wristwatch1_RainbowWater:BlockWhiteSpectraStill"), iconRegister.registerIcon("Wristwatch1_RainbowWater:BlockWhiteSpectraFlowing")};
+	        this.theIcon = new Icon[] {iconRegister.registerIcon("Wristwatch1_RainbowWater:BlockLightGreySpectraStill"), iconRegister.registerIcon("Wristwatch1_RainbowWater:BlockLightGreySpectraFlowing")};
 	    }
 	
 
@@ -43,35 +43,10 @@ public class BlockWhiteSpectraStill extends BlockStationary implements ILiquid
 		{
 			if (entity instanceof EntityLiving) 
 			{         
-				((EntityLiving) entity).addPotionEffect(new PotionEffect(Potion.heal.getId(),2 * 20, 0));
+				((EntityLiving) entity).addPotionEffect(new PotionEffect(Potion.resistance.getId(),1200, 1));
 				}  
 			{
 			
 			}
 		}
-
-		@Override
-		public int stillLiquidId() {
-			// TODO Auto-generated method stub
-			return mods.Wristwatch1_RainbowWater.rainbowwater.WhiteSpectraID;
-		}
-
-		@Override
-		public boolean isMetaSensitive() {
-			// TODO Auto-generated method stub
-			return false;
-		}
-
-		@Override
-		public int stillLiquidMeta() {
-			// TODO Auto-generated method stub
-			return 0;
-		}
-
-		@Override	
-		public boolean isBlockReplaceable(World world, int i, int j, int k) {	
-		
-			return true;
-		}
-}
-
+	} 
