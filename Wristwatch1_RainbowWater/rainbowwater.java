@@ -2,7 +2,6 @@ package mods.Wristwatch1_RainbowWater;
 
 import java.util.logging.Level;
 
-import mods.Wristwatch1_RainbowWater.buckethandlers.WhiteSpectraBucketHandler;
 import mods.Wristwatch1_RainbowWater.block.BlockBlackSpectraFlowing;
 import mods.Wristwatch1_RainbowWater.block.BlockBlackSpectraStill;
 import mods.Wristwatch1_RainbowWater.block.BlockBlueSpectraFlowing;
@@ -35,7 +34,38 @@ import mods.Wristwatch1_RainbowWater.block.BlockWhiteSpectraFlowing;
 import mods.Wristwatch1_RainbowWater.block.BlockWhiteSpectraStill;
 import mods.Wristwatch1_RainbowWater.block.BlockYellowSpectraFlowing;
 import mods.Wristwatch1_RainbowWater.block.BlockYellowSpectraStill;
+import mods.Wristwatch1_RainbowWater.buckethandlers.BlackSpectraBucketHandler;
+import mods.Wristwatch1_RainbowWater.buckethandlers.BlueSpectraBucketHandler;
+import mods.Wristwatch1_RainbowWater.buckethandlers.BrownSpectraBucketHandler;
+import mods.Wristwatch1_RainbowWater.buckethandlers.CyanSpectraBucketHandler;
+import mods.Wristwatch1_RainbowWater.buckethandlers.GreenSpectraBucketHandler;
+import mods.Wristwatch1_RainbowWater.buckethandlers.GreySpectraBucketHandler;
+import mods.Wristwatch1_RainbowWater.buckethandlers.LightBlueSpectraBucketHandler;
+import mods.Wristwatch1_RainbowWater.buckethandlers.LightGreySpectraBucketHandler;
+import mods.Wristwatch1_RainbowWater.buckethandlers.LimeGreenSpectraBucketHandler;
+import mods.Wristwatch1_RainbowWater.buckethandlers.MagentaSpectraBucketHandler;
+import mods.Wristwatch1_RainbowWater.buckethandlers.OrangeSpectraBucketHandler;
+import mods.Wristwatch1_RainbowWater.buckethandlers.PinkSpectraBucketHandler;
+import mods.Wristwatch1_RainbowWater.buckethandlers.PurpleSpectraBucketHandler;
+import mods.Wristwatch1_RainbowWater.buckethandlers.RedSpectraBucketHandler;
+import mods.Wristwatch1_RainbowWater.buckethandlers.WhiteSpectraBucketHandler;
+import mods.Wristwatch1_RainbowWater.buckethandlers.YellowSpectraBucketHandler;
+import mods.Wristwatch1_RainbowWater.item.ItemBlackSpectraBucket;
+import mods.Wristwatch1_RainbowWater.item.ItemBlueSpectraBucket;
+import mods.Wristwatch1_RainbowWater.item.ItemBrownSpectraBucket;
+import mods.Wristwatch1_RainbowWater.item.ItemCyanSpectraBucket;
+import mods.Wristwatch1_RainbowWater.item.ItemGreenSpectraBucket;
+import mods.Wristwatch1_RainbowWater.item.ItemGreySpectraBucket;
+import mods.Wristwatch1_RainbowWater.item.ItemLightBlueSpectraBucket;
+import mods.Wristwatch1_RainbowWater.item.ItemLightGreySpectraBucket;
+import mods.Wristwatch1_RainbowWater.item.ItemLimeGreenSpectraBucket;
+import mods.Wristwatch1_RainbowWater.item.ItemMagentaSpectraBucket;
+import mods.Wristwatch1_RainbowWater.item.ItemOrangeSpectraBucket;
+import mods.Wristwatch1_RainbowWater.item.ItemPinkSpectraBucket;
+import mods.Wristwatch1_RainbowWater.item.ItemPurpleSpectraBucket;
+import mods.Wristwatch1_RainbowWater.item.ItemRedSpectraBucket;
 import mods.Wristwatch1_RainbowWater.item.ItemWhiteSpectraBucket;
+import mods.Wristwatch1_RainbowWater.item.ItemYellowSpectraBucket;
 import mods.Wristwatch1_RainbowWater.tabs.TabLiquids;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -62,7 +92,7 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod( modid = rainbowwater.modid, name = "Rainbow Water", version = "0.3.32")
+@Mod( modid = rainbowwater.modid, name = "Rainbow Water", version = "0.5.7")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 
 public class rainbowwater
@@ -78,9 +108,41 @@ public class rainbowwater
 
 	//Blocks
 	
-	//Liquids
+	//Liquid Stacks
 	
 	public static LiquidStack WhiteSpectra;
+	
+	public static LiquidStack OrangeSpectra;
+	
+	public static LiquidStack MagentaSpectra;
+	
+	public static LiquidStack LightBlueSpectra;
+	
+	public static LiquidStack YellowSpectra;
+	
+	public static LiquidStack LimeGreenSpectra;
+	
+	public static LiquidStack PinkSpectra;
+	
+	public static LiquidStack GreySpectra;
+	
+	public static LiquidStack LightGreySpectra;
+	
+	public static LiquidStack CyanSpectra;
+	
+	public static LiquidStack PurpleSpectra;
+	
+	public static LiquidStack BlueSpectra;
+	
+	public static LiquidStack BrownSpectra;
+	
+	public static LiquidStack GreenSpectra;
+	
+	public static LiquidStack RedSpectra;
+	
+	public static LiquidStack BlackSpectra;
+	
+	//Liquids
 	
 	public static Block WhiteSpectraStill;
 	
@@ -186,11 +248,71 @@ public class rainbowwater
 	
 	public static Item WhiteSpectraBucket;
 	
+	public static Item OrangeSpectraBucket;
+	
+	public static Item MagentaSpectraBucket;
+	
+	public static Item LightBlueSpectraBucket;
+	
+	public static Item YellowSpectraBucket;
+	
+	public static Item LimeGreenSpectraBucket;
+	
+	public static Item PinkSpectraBucket;
+	
+	public static Item GreySpectraBucket;
+	
+	public static Item LightGreySpectraBucket;
+	
+	public static Item CyanSpectraBucket;
+	
+	public static Item PurpleSpectraBucket;
+	
+	public static Item BlueSpectraBucket;
+	
+	public static Item BrownSpectraBucket;
+	
+	public static Item GreenSpectraBucket;
+	
+	public static Item RedSpectraBucket;
+	
+	public static Item BlackSpectraBucket;
+	
 	//Armour
 	
 	//ItemIDs
 	
 	public static int WhiteSpectraBucketID;
+	
+	public static int OrangeSpectraBucketID;
+	
+	public static int MagentaSpectraBucketID;
+	
+	public static int LightBlueSpectraBucketID;
+	
+	public static int YellowSpectraBucketID;
+	
+	public static int LimeGreenSpectraBucketID;
+	
+	public static int PinkSpectraBucketID;
+	
+	public static int GreySpectraBucketID;
+	
+	public static int LightGreySpectraBucketID;
+	
+	public static int CyanSpectraBucketID;
+	
+	public static int PurpleSpectraBucketID;
+	
+	public static int BlueSpectraBucketID;
+	
+	public static int BrownSpectraBucketID;
+	
+	public static int GreenSpectraBucketID;
+	
+	public static int RedSpectraBucketID;
+	
+	public static int BlackSpectraBucketID;
 	
 	//CreativeTabs
 	
@@ -201,6 +323,36 @@ public class rainbowwater
 		proxy.registerRenderThings();
 		
 		 MinecraftForge.EVENT_BUS.register(new WhiteSpectraBucketHandler());
+		 
+		 MinecraftForge.EVENT_BUS.register(new OrangeSpectraBucketHandler());
+		 
+		 MinecraftForge.EVENT_BUS.register(new MagentaSpectraBucketHandler());
+		 
+		 MinecraftForge.EVENT_BUS.register(new LightBlueSpectraBucketHandler());
+		 
+		 MinecraftForge.EVENT_BUS.register(new YellowSpectraBucketHandler());
+		 
+		 MinecraftForge.EVENT_BUS.register(new LimeGreenSpectraBucketHandler());
+		 
+		 MinecraftForge.EVENT_BUS.register(new PinkSpectraBucketHandler());
+		 
+		 MinecraftForge.EVENT_BUS.register(new GreySpectraBucketHandler());
+		 
+		 MinecraftForge.EVENT_BUS.register(new LightGreySpectraBucketHandler());
+		 
+		 MinecraftForge.EVENT_BUS.register(new CyanSpectraBucketHandler());
+		 
+		 MinecraftForge.EVENT_BUS.register(new PurpleSpectraBucketHandler());
+		 
+		 MinecraftForge.EVENT_BUS.register(new BlueSpectraBucketHandler());
+		 
+		 MinecraftForge.EVENT_BUS.register(new BrownSpectraBucketHandler());
+
+		 MinecraftForge.EVENT_BUS.register(new GreenSpectraBucketHandler());
+		 
+		 MinecraftForge.EVENT_BUS.register(new RedSpectraBucketHandler());
+		 
+		 MinecraftForge.EVENT_BUS.register(new BlackSpectraBucketHandler());
 		 
 		Configuration cfg = new Configuration(evt.getSuggestedConfigurationFile());
 	
@@ -238,8 +390,37 @@ public class rainbowwater
 		
 		BlackSpectraID = cfg.getBlock("Black Spectra", 1009).getInt();
 		
-		WhiteSpectraBucketID = cfg.getItem("White Spectra Bucket", 525).getInt();
+		WhiteSpectraBucketID = cfg.getItem("White Spectra Bucket", 3841).getInt();
 		
+		OrangeSpectraBucketID = cfg.getItem("Orange Spectra Bucket", 3842).getInt();
+		
+		MagentaSpectraBucketID = cfg.getItem("Magenta Spectra Bucket", 3843).getInt();
+		
+		LightBlueSpectraBucketID = cfg.getItem("Light Blue Spectra Bucket", 3844).getInt();
+		
+		YellowSpectraBucketID = cfg.getItem("Yellow Spectra Bucket", 3845).getInt();
+		
+		LimeGreenSpectraBucketID = cfg.getItem("Lime Green Spectra Bucket", 3846).getInt();
+		
+		PinkSpectraBucketID = cfg.getItem("Pink Spectra Bucket", 3847).getInt();
+		
+		GreySpectraBucketID = cfg.getItem("Grey Spectra Bucket", 3848).getInt();
+		
+		LightGreySpectraBucketID = cfg.getItem("Light Grey Spectra Bucket", 3849).getInt();
+		
+		CyanSpectraBucketID = cfg.getItem("Cyan Spectra Bucket", 3850).getInt();
+		
+		PurpleSpectraBucketID = cfg.getItem("Purple Spectra Bucket", 3851).getInt();
+
+		BlueSpectraBucketID = cfg.getItem("Blue Spectra Bucket", 3852).getInt();
+
+		BrownSpectraBucketID = cfg.getItem("Brown Spectra Bucket", 3853).getInt();
+
+		GreenSpectraBucketID = cfg.getItem("Green Spectra Bucket", 3854).getInt();
+		
+		RedSpectraBucketID = cfg.getItem("Red Spectra Bucket", 3855).getInt();
+
+		BlackSpectraBucketID = cfg.getItem("Black Spectra Bucket", 3856).getInt();
 		
 	} catch (Exception e) {
 		
@@ -322,8 +503,38 @@ public class rainbowwater
 
 		//Items
 		
-		WhiteSpectraBucket = new ItemWhiteSpectraBucket(WhiteSpectraBucketID).setUnlocalizedName("ItemWhiteSpectraBucket");
+		WhiteSpectraBucket = new ItemWhiteSpectraBucket(WhiteSpectraBucketID, WhiteSpectraFlowing.blockID).setUnlocalizedName("ItemWhiteSpectraBucket").setContainerItem(Item.bucketEmpty);
 
+		OrangeSpectraBucket = new ItemOrangeSpectraBucket(OrangeSpectraBucketID, OrangeSpectraFlowing.blockID).setUnlocalizedName("ItemOrangeSpectraBucket").setContainerItem(Item.bucketEmpty);
+
+		MagentaSpectraBucket = new ItemMagentaSpectraBucket(MagentaSpectraBucketID, MagentaSpectraFlowing.blockID).setUnlocalizedName("ItemMagentaSpectraBucket").setContainerItem(Item.bucketEmpty);
+		
+		LightBlueSpectraBucket = new ItemLightBlueSpectraBucket(LightBlueSpectraBucketID, LightBlueSpectraFlowing.blockID).setUnlocalizedName("ItemLightBlueSpectraBucket").setContainerItem(Item.bucketEmpty);
+		
+		YellowSpectraBucket = new ItemYellowSpectraBucket(YellowSpectraBucketID, YellowSpectraFlowing.blockID).setUnlocalizedName("ItemYellowSpectraBucket").setContainerItem(Item.bucketEmpty);
+		
+		LimeGreenSpectraBucket = new ItemLimeGreenSpectraBucket(LimeGreenSpectraBucketID, LimeGreenSpectraFlowing.blockID).setUnlocalizedName("ItemLimeGreenSpectraBucket").setContainerItem(Item.bucketEmpty);
+
+		PinkSpectraBucket = new ItemPinkSpectraBucket(PinkSpectraBucketID, PinkSpectraFlowing.blockID).setUnlocalizedName("ItemPinkSpectraBucket").setContainerItem(Item.bucketEmpty);
+		
+		GreySpectraBucket = new ItemGreySpectraBucket(GreySpectraBucketID, GreySpectraFlowing.blockID).setUnlocalizedName("ItemGreySpectraBucket").setContainerItem(Item.bucketEmpty);
+		
+		LightGreySpectraBucket = new ItemLightGreySpectraBucket(LightGreySpectraBucketID, LightGreySpectraFlowing.blockID).setUnlocalizedName("ItemLightGreySpectraBucket").setContainerItem(Item.bucketEmpty);
+
+		CyanSpectraBucket = new ItemCyanSpectraBucket(CyanSpectraBucketID, CyanSpectraFlowing.blockID).setUnlocalizedName("ItemCyanSpectraBucket").setContainerItem(Item.bucketEmpty);
+
+		PurpleSpectraBucket = new ItemPurpleSpectraBucket(PurpleSpectraBucketID, PurpleSpectraFlowing.blockID).setUnlocalizedName("ItemPurpleSpectraBucket").setContainerItem(Item.bucketEmpty);
+		
+		BlueSpectraBucket = new ItemBlueSpectraBucket(BlueSpectraBucketID, BlueSpectraFlowing.blockID).setUnlocalizedName("ItemBlueSpectraBucket").setContainerItem(Item.bucketEmpty);
+
+		BrownSpectraBucket = new ItemBrownSpectraBucket(BrownSpectraBucketID, BrownSpectraFlowing.blockID).setUnlocalizedName("ItemBrownSpectraBucket").setContainerItem(Item.bucketEmpty);
+
+		GreenSpectraBucket = new ItemGreenSpectraBucket(GreenSpectraBucketID, GreenSpectraFlowing.blockID).setUnlocalizedName("ItemGreenSpectraBucket").setContainerItem(Item.bucketEmpty);
+
+		RedSpectraBucket = new ItemRedSpectraBucket(RedSpectraBucketID, RedSpectraFlowing.blockID).setUnlocalizedName("ItemRedSpectraBucket").setContainerItem(Item.bucketEmpty);
+
+		BlackSpectraBucket = new ItemBlackSpectraBucket(BlackSpectraBucketID, BlackSpectraFlowing.blockID).setUnlocalizedName("ItemBlackSpectraBucket").setContainerItem(Item.bucketEmpty);
+		
 		//Game Registry
 		
 		 GameRegistry.registerBlock(WhiteSpectraStill, modid + WhiteSpectraStill.getUnlocalizedName2());
@@ -389,7 +600,7 @@ public class rainbowwater
 		 GameRegistry.registerBlock(BlackSpectraStill, modid + BlackSpectraStill.getUnlocalizedName2());
 		 
 		 GameRegistry.registerBlock(BlackSpectraFlowing, modid + BlackSpectraFlowing.getUnlocalizedName2());
-
+		 
 		 //Language Registry
 		 
 		 //Blocks
@@ -432,20 +643,215 @@ public class rainbowwater
 		 
 		 LanguageRegistry.addName(WhiteSpectraBucket, "Bucket of White Spectra");
 		 
+		 LanguageRegistry.addName(OrangeSpectraBucket, "Bucket of Orange Spectra");
+		 
+		 LanguageRegistry.addName(MagentaSpectraBucket, "Bucket of Magenta Spectra");
+		 
+		 LanguageRegistry.addName(LightBlueSpectraBucket, "Bucket of Light Blue Spectra");
+		 
+		 LanguageRegistry.addName(YellowSpectraBucket, "Bucket of Yellow Spectra");
+		 
+		 LanguageRegistry.addName(LimeGreenSpectraBucket, "Bucket of Lime Green Spectra");
+		 
+		 LanguageRegistry.addName(PinkSpectraBucket, "Bucket of Pink Spectra");
+		 
+		 LanguageRegistry.addName(GreySpectraBucket, "Bucket of Grey Spectra");
+		 
+		 LanguageRegistry.addName(LightGreySpectraBucket, "Bucket of Light Grey Spectra");
+		 
+		 LanguageRegistry.addName(CyanSpectraBucket, "Bucket of Cyan Spectra");
+		 
+		 LanguageRegistry.addName(PurpleSpectraBucket, "Bucket of Purple Spectra");
+		 
+		 LanguageRegistry.addName(BlueSpectraBucket, "Bucket of Blue Spectra");
+
+		 LanguageRegistry.addName(BrownSpectraBucket, "Bucket of Brown Spectra");
+
+		 LanguageRegistry.addName(GreenSpectraBucket, "Bucket of Green Spectra");
+
+		 LanguageRegistry.addName(RedSpectraBucket, "Bucket of Red Spectra");
+
+		 LanguageRegistry.addName(BlackSpectraBucket, "Bucket of Black Spectra");
+		 
 		 //Armour
 		 
 		 //ItemStacks
 		 
+		 ItemStack waterBucketStack = new ItemStack(Item.bucketWater);
+		 
+		 ItemStack emptyBucketStack = new ItemStack(Item.bucketEmpty);
+		 
+		 ItemStack waterBottleStack = new ItemStack(Item.potion, 0);
+		 
+		 ItemStack whiteDyeStack = new ItemStack(Item.dyePowder, 1, 15);
+
+		 ItemStack orangeDyeStack = new ItemStack(Item.dyePowder, 1, 14);
+
+		 ItemStack magentaDyeStack = new ItemStack(Item.dyePowder, 1, 13);
+
+		 ItemStack lightblueDyeStack = new ItemStack(Item.dyePowder, 1, 12);
+
+		 ItemStack yellowDyeStack = new ItemStack(Item.dyePowder, 1, 11);
+
+		 ItemStack limegreenDyeStack = new ItemStack(Item.dyePowder, 1, 10);
+
+		 ItemStack pinkDyeStack = new ItemStack(Item.dyePowder, 1, 9);
+
+		 ItemStack greyDyeStack = new ItemStack(Item.dyePowder, 1, 8);
+
+		 ItemStack lightgreyDyeStack = new ItemStack(Item.dyePowder, 1, 7);
+
+		 ItemStack cyanDyeStack = new ItemStack(Item.dyePowder, 1, 6);
+
+		 ItemStack purpleDyeStack = new ItemStack(Item.dyePowder, 1, 5);
+
+		 ItemStack blueDyeStack = new ItemStack(Item.dyePowder, 1, 4);
+
+		 ItemStack brownDyeStack = new ItemStack(Item.dyePowder, 1, 3);
+
+		 ItemStack greenDyeStack = new ItemStack(Item.dyePowder, 1, 2);
+
+		 ItemStack redDyeStack = new ItemStack(Item.dyePowder, 1, 1);
+
+		 ItemStack blackDyeStack = new ItemStack(Item.dyePowder, 1, 0);
+		 
 		 //Recipes
+		 
+		 GameRegistry.addShapelessRecipe(new ItemStack(rainbowwater.WhiteSpectraBucket, 1),
+	                whiteDyeStack, waterBottleStack, waterBottleStack,
+	                waterBottleStack, emptyBucketStack);
+		 
+		 GameRegistry.addShapelessRecipe(new ItemStack(rainbowwater.OrangeSpectraBucket, 1),
+	                orangeDyeStack, waterBottleStack, waterBottleStack,
+	                waterBottleStack, emptyBucketStack);
+		 
+		 GameRegistry.addShapelessRecipe(new ItemStack(rainbowwater.MagentaSpectraBucket, 1),
+	                magentaDyeStack, waterBottleStack, waterBottleStack,
+	                waterBottleStack, emptyBucketStack);
+		 
+		 GameRegistry.addShapelessRecipe(new ItemStack(rainbowwater.LightBlueSpectraBucket, 1),
+	                lightblueDyeStack, waterBottleStack, waterBottleStack,
+	                waterBottleStack, emptyBucketStack);
+		 
+		 GameRegistry.addShapelessRecipe(new ItemStack(rainbowwater.YellowSpectraBucket, 1),
+	                yellowDyeStack, waterBottleStack, waterBottleStack,
+	                waterBottleStack, emptyBucketStack);
+		 
+		 GameRegistry.addShapelessRecipe(new ItemStack(rainbowwater.LimeGreenSpectraBucket, 1),
+	                limegreenDyeStack, waterBottleStack, waterBottleStack,
+	                waterBottleStack, emptyBucketStack);
+		 
+		 GameRegistry.addShapelessRecipe(new ItemStack(rainbowwater.PinkSpectraBucket, 1),
+	                pinkDyeStack, waterBottleStack, waterBottleStack,
+	                waterBottleStack, emptyBucketStack);
+		 
+		 GameRegistry.addShapelessRecipe(new ItemStack(rainbowwater.GreySpectraBucket, 1),
+	                greyDyeStack, waterBottleStack, waterBottleStack,
+	                waterBottleStack, emptyBucketStack);
+		 
+		 GameRegistry.addShapelessRecipe(new ItemStack(rainbowwater.LightGreySpectraBucket, 1),
+	                lightgreyDyeStack, waterBottleStack, waterBottleStack,
+	                waterBottleStack, emptyBucketStack);
+		 
+		 GameRegistry.addShapelessRecipe(new ItemStack(rainbowwater.CyanSpectraBucket, 1),
+	                cyanDyeStack, waterBottleStack, waterBottleStack,
+	                waterBottleStack, emptyBucketStack);
+		 
+		 GameRegistry.addShapelessRecipe(new ItemStack(rainbowwater.PurpleSpectraBucket, 1),
+	                purpleDyeStack, waterBottleStack, waterBottleStack,
+	                waterBottleStack, emptyBucketStack);
+		 
+		 GameRegistry.addShapelessRecipe(new ItemStack(rainbowwater.BlueSpectraBucket, 1),
+	                blueDyeStack, waterBottleStack, waterBottleStack,
+	                waterBottleStack, emptyBucketStack);
+		 
+		 GameRegistry.addShapelessRecipe(new ItemStack(rainbowwater.BrownSpectraBucket, 1),
+	                brownDyeStack, waterBottleStack, waterBottleStack,
+	                waterBottleStack, emptyBucketStack);
+		 
+		 GameRegistry.addShapelessRecipe(new ItemStack(rainbowwater.GreenSpectraBucket, 1),
+	                greenDyeStack, waterBottleStack, waterBottleStack,
+	                waterBottleStack, emptyBucketStack);
+		 
+		 GameRegistry.addShapelessRecipe(new ItemStack(rainbowwater.RedSpectraBucket, 1),
+	                redDyeStack, waterBottleStack, waterBottleStack,
+	                waterBottleStack, emptyBucketStack);
+		 
+		 GameRegistry.addShapelessRecipe(new ItemStack(rainbowwater.BlackSpectraBucket, 1),
+	                blackDyeStack, waterBottleStack, waterBottleStack,
+	                waterBottleStack, emptyBucketStack);
 		 
 		 //Liquid Dictionary
 		 
 		 WhiteSpectra = LiquidDictionary.getOrCreateLiquid("White Spectra", new LiquidStack(WhiteSpectraStill, 1));
 
+		 OrangeSpectra = LiquidDictionary.getOrCreateLiquid("Orange Spectra", new LiquidStack(OrangeSpectraStill, 1));
+
+		 MagentaSpectra = LiquidDictionary.getOrCreateLiquid("Magenta Spectra", new LiquidStack(MagentaSpectraStill, 1));
+
+		 LightBlueSpectra = LiquidDictionary.getOrCreateLiquid("Light Blue Spectra", new LiquidStack(LightBlueSpectraStill, 1));
+		 
+		 YellowSpectra = LiquidDictionary.getOrCreateLiquid("Yellow Spectra", new LiquidStack(YellowSpectraStill, 1));
+		 
+		 LimeGreenSpectra = LiquidDictionary.getOrCreateLiquid("Lime Green Spectra", new LiquidStack(LimeGreenSpectraStill, 1));
+		 
+		 PinkSpectra = LiquidDictionary.getOrCreateLiquid("Pink Spectra", new LiquidStack(PinkSpectraStill, 1));
+		 
+		 GreySpectra = LiquidDictionary.getOrCreateLiquid("Grey Spectra", new LiquidStack(GreySpectraStill, 1));
+		 
+		 LightGreySpectra = LiquidDictionary.getOrCreateLiquid("Light Grey Spectra", new LiquidStack(LightGreySpectraStill, 1));
+		 
+		 CyanSpectra = LiquidDictionary.getOrCreateLiquid("Cyan Spectra", new LiquidStack(CyanSpectraStill, 1));
+		 
+		 PurpleSpectra = LiquidDictionary.getOrCreateLiquid("Purple Spectra", new LiquidStack(PurpleSpectraStill, 1));
+		 
+		 BlueSpectra = LiquidDictionary.getOrCreateLiquid("Blue Spectra", new LiquidStack(BlueSpectraStill, 1));
+
+		 BrownSpectra = LiquidDictionary.getOrCreateLiquid("Brown Spectra", new LiquidStack(BrownSpectraStill, 1));
+
+		 GreenSpectra = LiquidDictionary.getOrCreateLiquid("Green Spectra", new LiquidStack(GreenSpectraStill, 1));
+
+		 RedSpectra = LiquidDictionary.getOrCreateLiquid("Red Spectra", new LiquidStack(RedSpectraStill, 1));
+
+		 BlackSpectra = LiquidDictionary.getOrCreateLiquid("Black Spectra", new LiquidStack(BlackSpectraStill, 1));
+		 
 		 //ContainerRegistery
 		 
 		 LiquidContainerRegistry.registerLiquid(new LiquidContainerData(LiquidDictionary.getLiquid("White Spectra", LiquidContainerRegistry.BUCKET_VOLUME), new ItemStack(WhiteSpectraBucket), new ItemStack(Item.bucketEmpty)));
 
+		 LiquidContainerRegistry.registerLiquid(new LiquidContainerData(LiquidDictionary.getLiquid("Orange Spectra", LiquidContainerRegistry.BUCKET_VOLUME), new ItemStack(OrangeSpectraBucket), new ItemStack(Item.bucketEmpty)));
+		
+		 LiquidContainerRegistry.registerLiquid(new LiquidContainerData(LiquidDictionary.getLiquid("Magenta Spectra", LiquidContainerRegistry.BUCKET_VOLUME), new ItemStack(MagentaSpectraBucket), new ItemStack(Item.bucketEmpty)));
+		 
+		 LiquidContainerRegistry.registerLiquid(new LiquidContainerData(LiquidDictionary.getLiquid("Light Blue Spectra", LiquidContainerRegistry.BUCKET_VOLUME), new ItemStack(LightBlueSpectraBucket), new ItemStack(Item.bucketEmpty)));
+		 
+		 LiquidContainerRegistry.registerLiquid(new LiquidContainerData(LiquidDictionary.getLiquid("Yellow Spectra", LiquidContainerRegistry.BUCKET_VOLUME), new ItemStack(YellowSpectraBucket), new ItemStack(Item.bucketEmpty)));
+		 
+		 LiquidContainerRegistry.registerLiquid(new LiquidContainerData(LiquidDictionary.getLiquid("Lime Green Spectra", LiquidContainerRegistry.BUCKET_VOLUME), new ItemStack(LimeGreenSpectraBucket), new ItemStack(Item.bucketEmpty)));
+		 
+		 LiquidContainerRegistry.registerLiquid(new LiquidContainerData(LiquidDictionary.getLiquid("Pink Spectra", LiquidContainerRegistry.BUCKET_VOLUME), new ItemStack(PinkSpectraBucket), new ItemStack(Item.bucketEmpty)));
+		 
+		 LiquidContainerRegistry.registerLiquid(new LiquidContainerData(LiquidDictionary.getLiquid("Grey Spectra", LiquidContainerRegistry.BUCKET_VOLUME), new ItemStack(GreySpectraBucket), new ItemStack(Item.bucketEmpty)));
+		 
+		 LiquidContainerRegistry.registerLiquid(new LiquidContainerData(LiquidDictionary.getLiquid("Light Grey Spectra", LiquidContainerRegistry.BUCKET_VOLUME), new ItemStack(LightGreySpectraBucket), new ItemStack(Item.bucketEmpty)));
+
+		 LiquidContainerRegistry.registerLiquid(new LiquidContainerData(LiquidDictionary.getLiquid("Cyan Spectra", LiquidContainerRegistry.BUCKET_VOLUME), new ItemStack(CyanSpectraBucket), new ItemStack(Item.bucketEmpty)));
+
+		 LiquidContainerRegistry.registerLiquid(new LiquidContainerData(LiquidDictionary.getLiquid("Purple Spectra", LiquidContainerRegistry.BUCKET_VOLUME), new ItemStack(PurpleSpectraBucket), new ItemStack(Item.bucketEmpty)));
+
+		 LiquidContainerRegistry.registerLiquid(new LiquidContainerData(LiquidDictionary.getLiquid("Blue Spectra", LiquidContainerRegistry.BUCKET_VOLUME), new ItemStack(BlueSpectraBucket), new ItemStack(Item.bucketEmpty)));
+
+		 LiquidContainerRegistry.registerLiquid(new LiquidContainerData(LiquidDictionary.getLiquid("Brown Spectra", LiquidContainerRegistry.BUCKET_VOLUME), new ItemStack(BrownSpectraBucket), new ItemStack(Item.bucketEmpty)));
+
+		 LiquidContainerRegistry.registerLiquid(new LiquidContainerData(LiquidDictionary.getLiquid("Green Spectra", LiquidContainerRegistry.BUCKET_VOLUME), new ItemStack(GreenSpectraBucket), new ItemStack(Item.bucketEmpty)));
+
+		 LiquidContainerRegistry.registerLiquid(new LiquidContainerData(LiquidDictionary.getLiquid("Red Spectra", LiquidContainerRegistry.BUCKET_VOLUME), new ItemStack(RedSpectraBucket), new ItemStack(Item.bucketEmpty)));
+
+		 LiquidContainerRegistry.registerLiquid(new LiquidContainerData(LiquidDictionary.getLiquid("Black Spectra", LiquidContainerRegistry.BUCKET_VOLUME), new ItemStack(BlackSpectraBucket), new ItemStack(Item.bucketEmpty)));
+		 
+		//EventBus
+		 MinecraftForge.EVENT_BUS.register(this);
+		 
 		 }
 	@PostInit public void postInit(FMLPostInitializationEvent evt) {
 

@@ -6,15 +6,14 @@ import mods.Wristwatch1_RainbowWater.rainbowwater;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBucket;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class ItemWhiteSpectraBucket extends ItemBucket
+public class ItemBlackSpectraBucket extends ItemBucket
 {
- public ItemWhiteSpectraBucket(int id, int liquidID) 
+ public ItemBlackSpectraBucket(int id, int liquidID) 
  {
   super(id, liquidID);
   this.setCreativeTab(rainbowwater.tabLiquids);
@@ -24,7 +23,7 @@ public class ItemWhiteSpectraBucket extends ItemBucket
  
  {
 
-     this.itemIcon = par1IconRegister.registerIcon("Wristwatch1_RainbowWater:ItemWhiteSpectraBucket");
+     this.itemIcon = par1IconRegister.registerIcon("Wristwatch1_RainbowWater:ItemBlackSpectraBucket");
 
  }
  
@@ -33,7 +32,6 @@ public class ItemWhiteSpectraBucket extends ItemBucket
 	 par3EntityPlayer.inventory.addItemStackToInventory(new ItemStack(Item.glassBottle,3));
  }
 
- 
 }
 
  

@@ -26,7 +26,6 @@ public class BlockLimeGreenSpectraStill extends BlockStationary
 		super(id, par2Material);
 		this.setHardness(100F);		
 		this.setLightOpacity(3);
-		this.setCreativeTab(rainbowwater.tabLiquids);
 		this.disableStats();
 		}
 		
