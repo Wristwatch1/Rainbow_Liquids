@@ -59,8 +59,10 @@ import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.client.event.TextureStitchEvent;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.ForgeSubscribe;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidContainerRegistry.FluidContainerData;
@@ -82,8 +84,10 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
-@Mod( modid = rainbowwater.modid, name = "Rainbow Water", version = "1.1.0") //mod details
+@Mod( modid = rainbowwater.modid, name = "Rainbow Water", version = "1.1.1") //mod details
 @NetworkMod(clientSideRequired = true, serverSideRequired = false) //keep these so mod will work in both SSP and SMP
 
 public class rainbowwater
@@ -609,6 +613,40 @@ public class rainbowwater
 	                blackDyeStack, waterBottleStack, waterBottleStack,
 	                waterBottleStack, emptyBucketStack);
 		 
+		 //FluidRegistry
+		 
+		 FluidRegistry.registerFluid(WhiteSpectra);
+		 
+		 FluidRegistry.registerFluid(OrangeSpectra);
+		 
+		 FluidRegistry.registerFluid(MagentaSpectra);
+		 
+		 FluidRegistry.registerFluid(LightBlueSpectra);
+		 
+		 FluidRegistry.registerFluid(YellowSpectra);
+		 
+		 FluidRegistry.registerFluid(LimeGreenSpectra);
+		 
+		 FluidRegistry.registerFluid(PinkSpectra);
+		 
+		 FluidRegistry.registerFluid(GreySpectra);
+		 
+		 FluidRegistry.registerFluid(LightGreySpectra);
+		 
+		 FluidRegistry.registerFluid(CyanSpectra);
+		 
+		 FluidRegistry.registerFluid(PurpleSpectra);
+		 
+		 FluidRegistry.registerFluid(BlueSpectra);
+		 
+		 FluidRegistry.registerFluid(BrownSpectra);
+		 
+		 FluidRegistry.registerFluid(GreenSpectra);
+		 
+		 FluidRegistry.registerFluid(RedSpectra);
+		 
+		 FluidRegistry.registerFluid(BlackSpectra);
+		 
 		 
 		 //ContainerRegistery (Links the bucket to the fluid)
 		 
@@ -646,11 +684,21 @@ public class rainbowwater
 
 		 FluidContainerRegistry.registerFluidContainer(new FluidContainerData(FluidRegistry.getFluidStack(rainbowwater.BlackSpectra.getName(), FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(rainbowwater.BlackSpectraBucket), new ItemStack(Item.bucketEmpty)));
 		 
-		 
+	  }
+		 @ForgeSubscribe
+		 @SideOnly(Side.CLIENT)
+			public void textureHook(TextureStitchEvent.Post event) {
+				if (event.map.textureType == 0) {
+					WhiteSpectra.setIcons(rainbowwater.BlockWhiteSpectra.getBlockTextureFromSide(1));
+				}
+			}
+	
+	
+		 {
 		//EventBus
 		 MinecraftForge.EVENT_BUS.register(this); //Closes the stuff
-		 
 		 }
+		 
 	@PostInit public void postInit(FMLPostInitializationEvent evt) {
 
 		}
