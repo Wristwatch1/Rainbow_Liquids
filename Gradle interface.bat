@@ -66,9 +66,6 @@ echo sorry i didnt understand please try agian.
 
 goto q1
 
-:error2
-echo sorry i didnt understand that place try agian.
-
 goto q2
 
 :error3
