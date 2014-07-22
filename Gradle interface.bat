@@ -17,6 +17,7 @@ set /P INPUT=B/U: %=%
 if /I "%INPUT%"=="u" goto setup-1
 if /I "%INPUT%"=="b" goto build
 if /I "%INPUT%"=="e" goto end
+if /I "%INPUT%"=="c" goto setup-3
 goto error1
 
 :q2
@@ -40,6 +41,11 @@ goto setup-2
 call gradlew eclipse
 
 goto end
+:setup-3
+echo cleaning build folder
+call gradle clean
+
+goto setup-1
 
 :build
 echo have you set up your build.gradle correctly?
