@@ -21,7 +21,7 @@ public class ItemProtoSpectraBucket extends ItemBucket
 	 public ItemProtoSpectraBucket(Block block) 
 	 {
 	  super(block);
-	  //this.setCreativeTab(rainbowwater.tabFluids);
+	  this.setCreativeTab(rainbowwater.tabFluids);
 	  this.setContainerItem(Items.bucket);
 	 }
 	  

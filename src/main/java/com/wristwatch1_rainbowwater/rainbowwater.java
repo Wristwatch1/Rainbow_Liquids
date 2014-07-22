@@ -94,7 +94,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod( modid = rainbowwater.modid, name = "Rainbow Liquids", version = "1.2 for MC 1.7.2") //Mod details
+@Mod( modid = rainbowwater.modid, name = "Rainbow Liquids", version = "1.2 for MC 1.7.2", dependencies = "after:coloredlightscore") //Mod details
 
 
 public class rainbowwater
