@@ -20,8 +20,8 @@ if /I "%INPUT%"=="e" goto end
 goto error1
 
 :q2
-echo would you like to run gradle setup for the first time for this mod?(e to exit)
-set INPUT=
+echo would you like to run gradle setup for the first time for this mod?
+
 set /P INPUT=Y/N: %=%
 
 if /I "%INPUT%"=="y" goto setup-1
