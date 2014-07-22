@@ -34,12 +34,13 @@ public class BlockBlackSpectra extends BlockFluidClassic
 	    public BlockBlackSpectra(Fluid fluid, Material material) {
 	            super(fluid, material);
 	            setBlockName("BlackSpectra");
-	            setLightLevel(0.0f);
+	            setLightLevel(-1.0f);
 	            try {
 	              coloredlightscore.src.api.CLApi.setBlockColorRGB(this, 0, 0, 0);
 	            } catch (Throwable e) {
 	              FMLLog.info("The ColoredLightCore is not installed, or it didn't load properly");
 	            }
+	            
 	            //setCreativeTab(rainbowwater.tabFluids);
 	    }
 	    
@@ -91,10 +92,18 @@ public class BlockBlackSpectra extends BlockFluidClassic
 		{         
 			((EntityPlayer) entity).addPotionEffect(new PotionEffect(Potion.harm.getId(),2 * 20, 0));//allows the potion affect to effect players
 			}  
+		if (entity instanceof EntityPlayer) 
+		{         
+			((EntityPlayer) entity).addPotionEffect(new PotionEffect(Potion.blindness.getId(),2 * 20, 0));//allows the potion affect to effect players
+			}
 		if (entity instanceof EntityLiving) 
 		{         
 			((EntityLiving) entity).addPotionEffect(new PotionEffect(Potion.harm.getId(),2 * 20, 0));//allows the potion affect to effect mobs
-			}  
+			}
+		if (entity instanceof EntityLiving) 
+		{         
+			((EntityLiving) entity).addPotionEffect(new PotionEffect(Potion.blindness.getId(),2 * 20, 0));//allows the potion affect to effect mobs
+			}
 	}
 	
 }

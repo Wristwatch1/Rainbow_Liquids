@@ -1,8 +1,11 @@
 package com.wristwatch1_rainbowwater.block;
 
+import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+
 import com.wristwatch1_rainbowwater.rainbowwater;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -30,6 +33,12 @@ public class BlockOrangeSpectra extends BlockFluidClassic
 	    public BlockOrangeSpectra(Fluid fluid, Material material) {
 	            super(fluid, material);
 	            setBlockName("OrangeSpectra");
+	            setLightLevel(1.0f);
+	            try {
+		              coloredlightscore.src.api.CLApi.setBlockColorRGB(this, 7, 10, 10);
+		            } catch (Throwable e) {
+		              FMLLog.info("The ColoredLightCore is not installed, or it didn't load properly");
+		            }
 	            //setCreativeTab(rainbowwater.tabFluids);
 	    }
 	    
