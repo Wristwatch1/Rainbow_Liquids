@@ -45,7 +45,7 @@ goto end
 echo cleaning build folder
 call gradlew.bat clean
 
-goto setup-1
+goto q1
 
 :build
 echo have you set up your build.gradle correctly?
