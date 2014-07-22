@@ -27,7 +27,7 @@ set /P INPUT=Y/N: %=%
 if /I "%INPUT%"=="y" goto setup-1
 if /I "%INPUT%"=="n" goto end
 if /I "%INPUT%"=="e" goto end
-goto error1
+goto error2
 
 
 :setup-1
@@ -65,6 +65,9 @@ exit
 echo sorry i didnt understand please try agian.
 
 goto q1
+
+:error2
+echo sorry i didnt understand please try agian.
 
 goto q2
 
