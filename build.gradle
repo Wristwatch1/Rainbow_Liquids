@@ -24,9 +24,9 @@ archivesBaseName = "Rainbow Liquids"
 minecraft {
     version = "1.7.2-10.12.1.1065"
     if (file('../run').exists()) (
-        assetDir = "../run/assets"
+        runDir = "../run/assets"
     ) else (
-        assetDir = "assets"
+        runDir = "assets"
     )
 }
 
