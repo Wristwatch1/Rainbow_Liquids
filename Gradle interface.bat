@@ -43,7 +43,7 @@ call gradlew eclipse
 goto end
 :setup-3
 echo cleaning build folder
-call gradle clean
+call gradlew clean
 
 goto setup-1
 
