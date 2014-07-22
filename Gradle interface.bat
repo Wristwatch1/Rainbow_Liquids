@@ -32,18 +32,18 @@ goto error2
 
 
 :setup-1
-call gradlew setupDevWorkspace
+call gradlew.bat setupDecompWorkspace --refresh-dependencies
 
 
 goto setup-2
 
 :setup-2
-call gradlew eclipse
+call gradlew.bat eclipse
 
 goto end
 :setup-3
 echo cleaning build folder
-call gradlew clean
+call gradlew.bat clean
 
 goto setup-1
 
