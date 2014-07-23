@@ -34,9 +34,9 @@ public class BlockPinkSpectra extends BlockFluidClassic
     public BlockPinkSpectra(Fluid fluid, Material material) {
             super(fluid, material);
             setBlockName("PinkSpectra");
-            setLightLevel(0.0f);
+            setLightLevel(1.0f);
             try {
-              coloredlightscore.src.api.CLApi.setBlockColorRGB(this, 0, 0, 0);
+              coloredlightscore.src.api.CLApi.setBlockColorRGB(this, 15, 8, 8);
             } catch (Throwable e) {
               FMLLog.info("The ColoredLightCore is not installed, or it didn't load properly");
             }
