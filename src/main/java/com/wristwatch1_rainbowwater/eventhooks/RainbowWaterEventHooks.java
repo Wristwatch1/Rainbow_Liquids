@@ -1,9 +1,10 @@
 package com.wristwatch1_rainbowwater.eventhooks;
 
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import com.wristwatch1_rainbowwater.rainbowwater;
-import net.minecraft.util.DamageSource;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
+
+import com.wristwatch1_rainbowwater.rainbowwater;
+
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public class RainbowWaterEventHooks 
 {

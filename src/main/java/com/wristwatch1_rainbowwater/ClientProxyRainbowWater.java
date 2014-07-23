@@ -1,7 +1,6 @@
 package com.wristwatch1_rainbowwater;
 
 import cpw.mods.fml.common.registry.LanguageRegistry;
-import net.minecraftforge.client.MinecraftForgeClient;
 
 public class ClientProxyRainbowWater extends CommonProxyRainbowWater
  {

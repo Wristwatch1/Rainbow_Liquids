@@ -3,16 +3,17 @@ package com.wristwatch1_rainbowwater.buckethandlers;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.wristwatch1_rainbowwater.rainbowwater;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.common.eventhandler.EventPriority;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
-import cpw.mods.fml.common.eventhandler.Event.Result;
 import net.minecraftforge.event.entity.player.FillBucketEvent;
+
+import com.wristwatch1_rainbowwater.rainbowwater;
+
+import cpw.mods.fml.common.eventhandler.Event.Result;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public class PinkSpectraBucketHandler 
 {
