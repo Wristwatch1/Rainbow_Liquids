@@ -1,12 +1,5 @@
 package com.wristwatch1_rainbowwater.block;
 
-import cpw.mods.fml.common.FMLLog;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-
-import com.wristwatch1_rainbowwater.rainbowwater;
-
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
@@ -17,10 +10,11 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraftforge.client.event.TextureStitchEvent;
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
-import net.minecraftforge.fluids.FluidRegistry;
+import cpw.mods.fml.common.FMLLog;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockOrangeSpectra extends BlockFluidClassic 
 {
@@ -35,7 +29,7 @@ public class BlockOrangeSpectra extends BlockFluidClassic
 	            setBlockName("OrangeSpectra");
 	            setLightLevel(1.0f);
 	            try {
-		              coloredlightscore.src.api.CLApi.setBlockColorRGB(this, 7, 10, 10);
+		              coloredlightscore.src.api.CLApi.setBlockColorRGB(this, 15, 10, 7);
 		            } catch (Throwable e) {
 		              FMLLog.info("The ColoredLightCore is not installed, or it didn't load properly");
 		            }
