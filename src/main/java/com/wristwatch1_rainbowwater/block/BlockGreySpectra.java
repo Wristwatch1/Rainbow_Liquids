@@ -34,9 +34,9 @@ public class BlockGreySpectra extends BlockFluidClassic
     public BlockGreySpectra(Fluid fluid, Material material) {
             super(fluid, material);
             setBlockName("GreySpectra");
-            setLightLevel(0.0f);
+            setLightLevel(1.0f);
             try {
-              coloredlightscore.src.api.CLApi.setBlockColorRGB(this, 0, 0, 0);
+              coloredlightscore.src.api.CLApi.setBlockColorRGB(this, 5, 5, 5);
             } catch (Throwable e) {
               FMLLog.info("The ColoredLightCore is not installed, or it didn't load properly");
             }
