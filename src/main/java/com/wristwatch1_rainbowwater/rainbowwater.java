@@ -10,6 +10,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
+import net.minecraftforge.client.event.TextureStitchEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidContainerRegistry;
@@ -51,6 +52,7 @@ import com.wristwatch1_rainbowwater.buckethandlers.RedSpectraBucketHandler;
 import com.wristwatch1_rainbowwater.buckethandlers.WhiteSpectraBucketHandler;
 import com.wristwatch1_rainbowwater.buckethandlers.YellowSpectraBucketHandler;
 import com.wristwatch1_rainbowwater.eventhooks.RainbowWaterEventHooks;
+import com.wristwatch1_rainbowwater.fluid.ProtoSpectra;
 import com.wristwatch1_rainbowwater.item.ItemBlackSpectraBucket;
 import com.wristwatch1_rainbowwater.item.ItemBlueSpectraBucket;
 import com.wristwatch1_rainbowwater.item.ItemBrownSpectraBucket;
@@ -78,7 +80,10 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 @Mod( modid = rainbowwater.modid, name = "Rainbow Liquids", version = "1.2.2 for MC 1.7.2", dependencies = "after:coloredlightscore") //Mod details
 
@@ -303,7 +308,7 @@ public class rainbowwater
 	  {
 		//Fluids (Defining the files, and registering them)
 		
-		ProtoSpectra = new Fluid ("ProtoSpectra").setDensity(10).setViscosity(1000);
+		ProtoSpectra = new ProtoSpectra().setDensity(10).setViscosity(1000);
 		
 		WhiteSpectra = new Fluid ("WhiteSpectra").setDensity(10).setViscosity(1000);
 		
@@ -856,14 +861,13 @@ public class rainbowwater
 		 MinecraftForge.EVENT_BUS.register(BlackSpectraBucketHandler.INSTANCE);
 		 
 	  }
-		/* @ForgeSubscribe
+		/* @SubscribeEvent
 		 @SideOnly(Side.CLIENT)
 			public void textureHook(TextureStitchEvent.Post event) {
-				if (event.map.textureType == 0) {
-					WhiteSpectra.setIcons(rainbowwater.BlockWhiteSpectra.getBlockTextureFromSide(1));
+				if (event.map.getTextureType() == 0) {
+					ProtoSpectra.setIcons(BlockProtoSpectra.getBlockTextureFromSide(1), BlockProtoSpectra.getBlockTextureFromSide(2));
 				}
 			}*/
-	
 	
 		 {
 		//EventBus
